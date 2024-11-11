@@ -1,0 +1,147 @@
+======================
+mysql-ctl cli
+======================
+use DATBASENAME;
+use trendy;
+======================
+show tables;
+======================
+select * from tablename;
+select * from employeeid;
+======================
+
+CREATE TABLE employee (
+firstname varchar(20),
+middlename varchar(20),
+lastname varchar(20),
+age int,
+salary int,
+location varchar(20)
+);
+
+======================
+Delete the table
+======================
+drop table tablename;
+
+======================
+
+INSERT INTO employee VALUES ('fisrtname','middlename','lastname',age,salary,'location');
+insert into employee values ('Kapil','kumar','sharma',28,10000,'navsari');
+insert into employee values ('Raj','kumar','shah',30,11000,'suart');
+insert into employee values ('satish','raj','patel',50,50000,'navasri');
+insert into employee values ('Raj','h','shah',26,11000,'suart');
+
+insert into employee values ('Nilesh','kumar','gandhi',28,10000,'navsari');
+insert into employee values ('Ramesh','kumar','modi',30,11000,'suart');
+insert into employee values ('satish','bhai','patil',50,50000,'navasri');
+insert into employee values ('Rajesh','n','shah',26,11000,'suart');
+
+
+mysql-ctl cli
+
+use DATBASENAME;
+use trendy;
+
+show tables;
+
+select * from tablename;
+select * from employee;
+
+This is use for create regular (normal ) tables we can put null in the details
+CREATE TABLE employee (
+firstname varchar(20),
+middlename varchar(20),
+lastname varchar(20),
+age int,
+salary int,
+location varchar(20)
+);
+
+INSERT INTO employee VALUES ('fisrtname','middlename','lastname',age,salary,'location');
+insert into employee values (1,'Kapil','kumar','sharma',28,10000,'navsari');
+insert into employee values ('Raj','kumar','shah',30,11000,'suart');
+insert into employee values ('satish','raj','patel',50,50000,'navasri');
+insert into employee values ('Raj','h','shah',26,11000,'suart');
+
+insert into employee values ('Nilesh','kumar','gandhi',28,10000,'navsari');
+insert into employee values ('Ramesh','kumar','modi',30,11000,'suart');
+insert into employee values ('satish','bhai','patil',50,50000,'');
+insert into employee values ('Rajesh','n','shah',26,11000,'suart');
+
+======================
+This is use for create tables we cannot put null in the details
+======================
+
+CREATE TABLE employeeid (
+firstname varchar(20) not null,
+middlename varchar(20),
+lastname varchar(20) not null,
+age int not null,
+salary int not null,
+location varchar(20) not null
+);
+======================
+If we want some DEFAULT values in table use DEFAULT function 
+====================== 
+
+For example   location varchar(20) DEFAULT ‘navsari’
+CREATE TABLE employeeid (
+id int primary key,
+firstname varchar(20) not null,
+middlename varchar(20),
+lastname varchar(20) not null,
+age int not null,
+salary int not null,
+location varchar(20) default ‘navsari’
+);
+
+insert into employeeid values (1,'Raj','h','shah',26,11000,'suart');
+
+insert into employeeid values (NULL,'Raj','h','shah',26,11000,'suart');
+
+insert into employeeid(id, firstname, lastname, age, salary) values (3, 'satish', 'patel', 29, 15000);
+
+======================
+primary key
+======================
+
+for a primary key NULL is not allowed and also repeated values are not allowed 
+
+CREATE TABLE employeeid (
+id int auto_increment,
+firstname varchar(20) not null,
+middlename varchar(20),
+lastname varchar(20) not null,
+age int not null,
+salary int not null,
+location varchar(20) default ‘navsari’
+primary key(id) 
+);
+
+
+insert into employeeid(firstname, lastname, age, salary) values ('satish', 'patel', 29, 15000);
+insert into employeeid(firstname, lastname, age, salary) values ('kapil', 'sharma', 32, 20000);
+
+======================
+unique key
+======================
+you can have only one primary key
+and the primary key cannot hold any NULL 
+we should use primary key when we gave to uniquely identify each record.
+unique key can hold NULL
+
+CREATE TABLE employeeid (
+id int auto_increment,
+firstname varchar(20) not null,
+middlename varchar(20),
+lastname varchar(20) not null,
+age int not null,
+salary int not null,
+location varchar(20) default ‘navsari’
+primary key(id) 
+);
+
+body {
+  background-image: url("C:\Users\gresy\Downloads\AZP51.jpg");
+}
